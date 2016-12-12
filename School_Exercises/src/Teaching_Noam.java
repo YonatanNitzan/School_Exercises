@@ -15,7 +15,7 @@ public class Teaching_Noam {
 		inputInt = reader.nextInt();
 		
 		System.out.println("The string you asked for +! is: " + inputString + "! *boop*");
-		System.out.println("The number you wantet +3 is: " + (inputInt+3));
+		System.out.println("The number you wantet +5 is: " + (inputInt+5));
 		
 	}
 }
