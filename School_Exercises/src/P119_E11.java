@@ -5,35 +5,33 @@ public class P119_E11 {
 	public static void main(String[] args) {
 		int grades[][] = new int[10][10];
 		int[] ids = new int[10];
-		int id;
-		int grade;
+		int id = 1;
+		int grade = 0;
 		int sc = 0;
 		int gc = 0;
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
-		do
+		for(int i = 0; id != 0; i++)
 		{
-			System.out.print("Enter I.D.: ");
 			id = s.nextInt();
-			if(id==0)
-				break;
-			do
+			ids[i] = id;
+			for(int j = 0; grade != 999; j++)
 			{
-				System.out.print("Enter grade: ");
 				grade = s.nextInt();
-				if(grade==999)
+				if(grade == 999)
 					break;
-				grades[sc][gc] = grade;
-				gc++;
-			}while(true);
-			sc++;
-		}while(true);
-		
-		int j = 0;
-		for(int i=0; i<10; i++)
+				grades[i][j] = grade;
+			}
+		}
+		for(int i = 0; i < 10; i++)
 		{
-			System.out.print(grades[i][j] + ", ");
-			j++;
+			System.out.print(ids[i] + " - ");
+			for(int j = 0; j < 10; j++)
+			{
+				
+				System.out.print(grades[i][j] + ", ");
+			}
+			System.out.println("");
 		}
 	}
 }
