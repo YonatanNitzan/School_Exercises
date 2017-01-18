@@ -36,10 +36,24 @@ public class Java_Courses {
 				+ "'System.out.println()' command.");
 		System.out.println("In the simplest way, 'System.out.println()' can be used "
 				+ "to print a String like so:\n");
-		System.out.println("System.out.println(\"I'm being outputed!\")");
+		System.out.println("public static void mai(String[] args) {"
+				+ "\nSystem.out.println(\"I'm being outputed!\")"
+				+ "\n}");
 		System.out.println("\nThis prints out:");
 		System.out.println("\nI'm being printed!");
-		System.out.println("\n Important note: While printing a string you MUST include the quotes, it wouldn't work without them!");
-		System.out.println("\n");
+		System.out.println("\n Important note: While printing a string you MUST include the quotation marks, it wouldn't work without them!");
+		System.out.println("\nNow lets have a little excercise! \nHere is the first one:\n");
+		System.out.println("Is this excercise, you need to complete the code to print out \"Hello world\".\n");
+		System.out.println("public static void mai(String[] args) {"
+				+ "\nSystem.out.println(_____)"
+				+ "\n}");
+		System.out.print("\nYour answer: ");
+		in = sc.nextLine();
+		String[] bla = new String[1];
+		bla[0] = "Hello world";
+		if (in.charAt(0) == '"' && in.charAt(12) == '"' && in.split("\"") == bla)
+			System.out.println("Correct! Good job!!");
+		else 
+			System.out.println("Sorry, " + in + " is incorrect... \nThe correct answer was \"Hello world\", quotation marks included.");
 	}
 }
