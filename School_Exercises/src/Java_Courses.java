@@ -44,16 +44,19 @@ public class Java_Courses {
 		System.out.println("\n Important note: While printing a string you MUST include the quotation marks, it wouldn't work without them!");
 		System.out.println("\nNow lets have a little excercise! \nHere is the first one:\n");
 		System.out.println("Is this excercise, you need to complete the code to print out \"Hello world\".\n");
-		System.out.println("public static void mai(String[] args) {"
+		System.out.println("public static void main(String[] args) {"
 				+ "\nSystem.out.println(_____)"
 				+ "\n}");
 		System.out.print("\nYour answer: ");
-		in = sc.nextLine();
-		String[] bla = new String[1];
-		bla[0] = "Hello world";
-		if (in.charAt(0) == '"' && in.charAt(12) == '"' && in.split("\"") == bla)
+		sc.reset();
+		String ans = sc.nextLine();
+		String[] words = new String[2];
+		words = ans.split("\"");
+		words = words[1].split(" ");
+		if ((words[0] == "Hello" || words[1] == "world"))
 			System.out.println("Correct! Good job!!");
-		else 
-			System.out.println("Sorry, " + in + " is incorrect... \nThe correct answer was \"Hello world\", quotation marks included.");
+		else
+			System.out.println("Sorry, " + ans + " is incorrect... \nThe correct answer was \"Hello world\", quotation marks included.");
+			System.out.println("First word - " + words[0] + "\nSecond word - " + words[1]);
 	}
 }
