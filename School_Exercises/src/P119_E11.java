@@ -7,8 +7,6 @@ public class P119_E11 {
 		int[] ids = new int[10];
 		int id = 1;
 		int grade = 0;
-		int sc = 0;
-		int gc = 0;
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		for(int i = 0; id != 0; i++)

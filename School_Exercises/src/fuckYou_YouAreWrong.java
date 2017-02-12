@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class fuckYou_YouAreWrong {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		/*
 		int max = 0, x, y;
