@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class Number_Switcher {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		@SuppressWarnings("resource")
 		Scanner reader = new Scanner(System.in);
 		
