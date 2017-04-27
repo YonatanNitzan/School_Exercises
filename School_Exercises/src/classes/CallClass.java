@@ -194,5 +194,3 @@ public class CallClass {
 		}
 	}
 }
-
-//TODO: Make a program that takes an input like and writes it letter by letter
