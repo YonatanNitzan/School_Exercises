@@ -6,51 +6,19 @@ public class Number_Switcher {
 		@SuppressWarnings("resource")
 		Scanner reader = new Scanner(System.in);
 		
-		int d1, d10, d100, d1000, d10000, num, length;
+		int num, n = 0, d;
 		
-		System.out.println("Enter a number: (2 to 5 digits)");
+		System.out.print("Enter a number: ");
 		
 		num = reader.nextInt();
 		
-		length = (int)(Math.log10(num)+1);;
+		while(num > 0) {
+			d = num % 10;
+			n = n*10 + d;
+			num /= 10;
+		}
 		
-		d1 = num%10;
-		
-		switch(length){
-		case 2:
-			d10 = (num/10)%10;
-			System.out.println("The number is - " + d1 + d10);
-			System.out.print("The sum of the digits is - " + (d1 + d10));
-			break;
-		
-		case 3:
-			d10 = (num/10)%10;
-			d100 = num/100;
-			System.out.println("The number is - " + d1 + d10 + d100);
-			System.out.print("The sum of the digits is - " + (d1 + d10 + d100));
-			break;
-		
-		case 4:
-			d10 = (num/10)%10;
-			d100 = (num/100)%10;
-			d1000 = num/1000;
-			System.out.println("The number is - " + d1 + d10 + d100 + d1000);
-			System.out.print("The sum of the digits is - " + (d1 + d10 + d100 + d1000));
-			break;
-		
-		case 5:
-			d10 = (num/10)%10;
-			d100 = (num/100)%10;
-			d1000 = (num/1000)%10;
-			d10000 = num/10000;
-			System.out.println("The number is - " + d1 + d10 + d100 + d1000 + d10000);
-			System.out.print("The sum of the digits is - " + (d1 + d10 + d100 + d1000 + d10000));
-			break;
-
-		default:
-			System.out.println("That is not a 2 to 5 digit number!");
-			break;
-		}	
-	}
+		System.out.println(n);
+		}
 
 }
