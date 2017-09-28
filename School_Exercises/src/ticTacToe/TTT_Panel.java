@@ -1,4 +1,4 @@
-package ticTacTow;
+package ticTacToe;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,17 +11,17 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class TTW_Panel extends JPanel {
+public class TTT_Panel extends JPanel {
 
 	/* Variable declaration */
 	private final static int WIDTH = 600, HEIGHT = WIDTH; // Finals for the panel's size
-	private final ArrayList<TTW_Grid_Piece> grid;
+	private final ArrayList<TTT_Grid_Piece> grid;
 
-	public TTW_Panel(TTW_Frame frame) {
+	public TTT_Panel(TTT_Frame frame) {
 		grid = new ArrayList<>();
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++)
-				grid.add(new TTW_Grid_Piece(new Rectangle2D.Double(j * WIDTH / 3, i * HEIGHT / 3, WIDTH / 3, HEIGHT / 3),
+				grid.add(new TTT_Grid_Piece(new Rectangle2D.Double(j * WIDTH / 3, i * HEIGHT / 3, WIDTH / 3, HEIGHT / 3),
 						Color.BLUE, Color.RED)); // Creates a 3x3 grid
 		}
 
@@ -29,7 +29,7 @@ public class TTW_Panel extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent me) { // When the mouse is clicked
 				super.mouseClicked(me);
-				for (TTW_Grid_Piece gp : grid) { // Runs a loop on all squares
+				for (TTT_Grid_Piece gp : grid) { // Runs a loop on all squares
 
 					if (gp.getBounds().contains(me.getPoint())) { // Checks if a square is clicked
 
@@ -38,7 +38,11 @@ public class TTW_Panel extends JPanel {
 						// Squares numbered 0-8 from left to right and up to down
 
 						// Draws/erases an X in the clicked square
-						gp.getX().toggle();
+						if (!gp.isOccupied) {
+							gp.toggle();
+							gp.getX().toggle();
+							System.out.println("toggled " + (grid.indexOf(gp)));
+						}
 						repaint();
 					}
 				}
@@ -51,7 +55,7 @@ public class TTW_Panel extends JPanel {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
 
-		for (TTW_Grid_Piece gp : grid) {
+		for (TTT_Grid_Piece gp : grid) {
 			gp.getX().tryPaint(g2);
 			g2.draw(gp.getBounds());
 		}

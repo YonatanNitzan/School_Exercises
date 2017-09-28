@@ -1,19 +1,21 @@
-package ticTacTow;
+package ticTacToe;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 
-public class TTW_X {
+public class TTT_X {
 
 	/* Variable declaration */
 	private Color color;
 	private Rectangle2D.Double bounds;
+	private TTT_Grid_Piece grid;
 	boolean isVisible = false;
 
-	public TTW_X(Rectangle2D.Double bounds, Color c) {
+	public TTT_X(Rectangle2D.Double bounds, Color c, TTT_Grid_Piece grid) {
 		setBounds(bounds);
 		color = c;
+		this.grid = grid;
 	}
 
 	public Rectangle2D.Double getBounds() {

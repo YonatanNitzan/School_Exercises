@@ -1,39 +1,39 @@
-package ticTacTow;
+package ticTacToe;
 
 import java.awt.Color;
 import java.awt.geom.Rectangle2D;
 
-public class TTW_Grid_Piece {
+public class TTT_Grid_Piece {
 
 	/* Variable declaration */
-	private TTW_X x;
-	private TTW_O o;
+	private TTT_X x;
+	private TTT_O o;
 	private Rectangle2D.Double bounds;
 	public boolean isOccupied = false;
 
-	public TTW_Grid_Piece(Rectangle2D.Double bounds, Color colorX, Color colorO) {
+	public TTT_Grid_Piece(Rectangle2D.Double bounds, Color colorX, Color colorO) {
 		setBounds(bounds);
-		setX(new TTW_X(getBounds(), colorX));
-		setO(new TTW_O(getBounds(), colorO));
+		setX(new TTT_X(getBounds(), colorX, this));
+		setO(new TTT_O(getBounds(), colorO, this));
 	}
 	
 	public void toggle() {
 		isOccupied = !isOccupied;
 	}
 
-	public TTW_X getX() {
+	public TTT_X getX() {
 		return x;
 	}
 
-	public TTW_O getO() {
+	public TTT_O getO() {
 		return o;
 	}
 
-	public void setX(TTW_X x) {
+	public void setX(TTT_X x) {
 		this.x = x;
 	}
 
-	public void setO(TTW_O o) {
+	public void setO(TTT_O o) {
 		this.o = o;
 	}
 
