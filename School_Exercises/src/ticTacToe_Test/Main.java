@@ -1,4 +1,4 @@
-package TicTacToe_Test;
+package ticTacToe_Test;
 
 public class Main {
 
